@@ -16,6 +16,10 @@ Typical flow of the application is:
   - Create some other group: `mealie-crypt groups add -g my-name`
   - Create group `_`, with specific users: `mealie-crypt groups add -U user1 -U user2`
 
+- Adding users to groups:
+  - Add user to existing group: `mealie-crypt group user-add -u your-name -U their-name`
+    - *You must be a part of the group to which you are adding users.*
+
 - Add values:
   - Add a value to group `_`: `mealie-crypt values set -n foo -v bar`
   - Decrypt, edit and re-encrypt:
@@ -35,7 +39,7 @@ Mealie-crypt works by:
 
 ## Repository usage
 To use the encrypted file in a team, the following goals have been met:
-- Users do not need to share their passwords - only their private keys
+- Users do not need to share their passwords - only their public keys
 - The structure of the file is text-based yaml, which handles well in git merge functions, and is human-editable too
 - It is possible to mass decrypt, and encrypt the file - preserving encrypted content that does not change, so as to minimize changed-line counts.
 
